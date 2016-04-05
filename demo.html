@@ -4,361 +4,168 @@
 	<title>test page</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link href="css/font-awesome.min.css" rel="stylesheet" />
-	<style type="text/css">
-.zmyh-menu {
-	padding: 0;
-	position: fixed;
-}
-.zmyh-menu * {
-	position: inherit;
-}
-.zmyh-menu a {
-}
-.zmyh-menu:before,
-.zmyh-menu:after {
-	display: table;
-	content: " ";
-}
-.zmyh-menu-entry, .zmyh-menu-detail {
-	z-index: 1000000;
-}
-.zmyh-menu .zmyh-menu-check {
-	display: none;
-}
-#zmyh_menu_check:not(:checked) + .zmyh-menu-entry {
-	color: #AAAAAA;
-	height: 56px;
-	width: 56px;
-	border-radius: 28px;
-	cursor: pointer;
-	font-size: 33px;
-	border: 1px solid #AAAAAA;
-}
-#zmyh_menu_check:not(:checked) + .zmyh-menu-entry i {
-	position: relative;
-	top: 10px;
-	left: 13px;
-}
-#zmyh_menu_check:not(:checked) + .zmyh-menu-entry:hover,
-#zmyh_menu_check:checked + .zmyh-menu-entry {
-	color: #666666;
-	height: 50px;
-	width: 50px;
-	border-radius: 30px;
-	cursor: pointer;
-	font-size: 33px;
-	border: 4px solid #666666;
-}
-#zmyh_menu_check:not(:checked) + .zmyh-menu-entry:hover i,
-#zmyh_menu_check:checked + .zmyh-menu-entry i {
-	position: relative;
-	top: 7px;
-	left: 10px;
-}
-#zmyh_menu_check:not(:checked) ~ .zmyh-menu-detail,
-#zmyh_menu_check:not(:checked) ~ .zmyh-menu-mask {
-	display: none;
-}
-#zmyh_menu_check:checked ~ .zmyh-menu-detail,
-#zmyh_menu_check:checked ~ .zmyh-menu-mask {
-	display: block;
-}
-.zmyh-menu-mask {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed !important;
-	z-index: 900000;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=33)";
-	filter: alpha(opacity=33);
-	opacity: 0.33;
-	background-color: black;
-}
-.zmyh-menu-detail ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-.zmyh-menu-check:not(:checked) ~ .zmyh-menu-child {
-	display: none;
-}
-.zmyh-menu-check:checked ~ .zmyh-menu-child {
-	display: block;
-}
-.zmyh-menu-item {
-	padding: 15px;
-	border: 1px solid #d6e9c6;
-	color: #3c763d;
-	background-color: #dff0d8;
-	position: relative;
-	display: list-item;
-	cursor: pointer;
-}
-.zmyh-menu-text {
-	cursor: pointer;
-}
-@media (max-width: 992px) {
-	.zmyh-menu {
-		right: 100px;
-		bottom: 100px;
-	}
-	.zmyh-menu-detail {
-		position: fixed;
-		right: 470px;
-	}
-	.zmyh-menu-detail>ul {
-		width: 600px;
-		max-height: 500px;
-		overflow: auto;
-		bottom: 100px;
-	}
-	.zmyh-menu-item {
-		padding: 8px;
-		min-height: 40px;
-		width: 300px;
-		margin-bottom: 10px;
-		border-radius: 8px;
-		display: list-item;
-	}
-	.zmyh-menu-child .zmyh-menu-item {
-		margin: 8px 8px;
-		padding: 0;
-		min-height: 15px;
-		border: none;
-		background-color: transparent;
-	}
-}
-@media (min-width: 992px) {
-	.zmyh-menu {
-		left: 35px;
-		top: 35px;
-	}
-	.zmyh-menu-item {
-		margin-bottom: 15px;
-		border-radius: 4px;
-		width: 280px;
-		display: list-item;
-	}
-	.zmyh-menu-detail {
-		margin-top: 72px;
-	}
-	.zmyh-menu-child {
-		position: absolute;
-		top: -1px;
-		left: 300px;
-	}
-	.zmyh-menu-child>.zmyh-menu-item {
-		margin-left: 30px;
-	}
-}
-@media (min-width: 1200px) {
-	.zmyh-menu {
-		width: 100%;
-		padding-left: 28px;
-		padding-top: 28px;
-		top: 0;
-		left: 0;
-		overflow-x: auto;
-	}
-	.zmyh-menu-detail {
-		margin-top: 5px;
-		margin-left: 72px;
-	}
-	.zmyh-menu-item {
-		position: relative;
-		border-radius: 4px;
-		margin-bottom: 0;
-		width: 160px;
-		display: inline-block;
-	}
-	.zmyh-menu-child {
-		display: none;
-		position: absolute;
-		top: 40px;
-		left: -1px;
-	}
-	.zmyh-menu-text {
-		width: 100%;
-	}
-	.zmyh-menu-child>.zmyh-menu-item:first-child {
-		margin-top: 22px;
-	}
-	.zmyh-menu-child>.zmyh-menu-item {
-		margin-top: 10px;
-		margin-left: 0;
-	}
-	.zmyh-menu-child .zmyh-menu-child {
-		top: 0;
-		left: 160px;
-	}
-	.zmyh-menu-child .zmyh-menu-child>.zmyh-menu-item {
-		margin-top: 8px;
-		margin-left: 40px;
-	}
-}
-	</style>
+	<link href="css/zeta-menu.css" rel="stylesheet" />
 </head>
 <body>
 <div>
-	<nav class="zmyh-menu">
-		<input type="checkbox" id="zmyh_menu_check" class="zmyh-menu-check">
-		<label for="zmyh_menu_check" class="zmyh-menu-entry"><i class="fa fa-navicon"></i></label>
-		<div class="zmyh-menu-detail">
+	<nav class="zeta-menu">
+		<input type="checkbox" id="zeta_menu_check" class="zeta-menu-check">
+		<label for="zeta_menu_check" class="zeta-menu-entry"><i class="fa fa-navicon"></i></label>
+		<div class="zeta-menu-detail">
 			<ul>
-				<li class="zmyh-menu-item">
-					<input type="radio" id="zmyh_menu_check1" name="zmyh_menu_radio" class="zmyh-menu-check">
-					<label for="zmyh_menu_check1" class="zmyh-menu-text">mnbmnbnm</label>
-					<ul class="zmyh-menu-child">
-						<li class="zmyh-menu-item">
+				<li class="zeta-menu-item">
+					<input type="radio" id="zeta_menu_check1" name="zeta_menu_radio" class="zeta-menu-check">
+					<label for="zeta_menu_check1" class="zeta-menu-text">mnbmnbnm</label>
+					<ul class="zeta-menu-child">
+						<li class="zeta-menu-item">
 							<a href="#">dfdsfsdf</a>
 						</li>
-						<li class="zmyh-menu-item">
+						<li class="zeta-menu-item">
 							<a href="#">vcxvxcvcx</a>
 						</li>
-						<li class="zmyh-menu-item">
+						<li class="zeta-menu-item">
 							<a href="#">vcxvxcvcx</a>
 						</li>
-						<li class="zmyh-menu-item">
+						<li class="zeta-menu-item">
 							<a href="#">vcxvxcvcx</a>
 						</li>
 					</ul>
 				</li>
-				<li class="zmyh-menu-item">
-					<input type="radio" id="zmyh_menu_check2" name="zmyh_menu_radio" class="zmyh-menu-check">
-					<label for="zmyh_menu_check2" class="zmyh-menu-text">vcxvxccx</label>
-					<ul class="zmyh-menu-child">
-						<li class="zmyh-menu-item">
-							<input type="radio" id="zmyh_menu_check2_1" name="zmyh_menu_radio2" class="zmyh-menu-check">
-							<label for="zmyh_menu_check2_1" class="zmyh-menu-text">ghjhjhg</label>
-							<ul class="zmyh-menu-child">
-								<li class="zmyh-menu-item">
+				<li class="zeta-menu-item">
+					<input type="radio" id="zeta_menu_check2" name="zeta_menu_radio" class="zeta-menu-check">
+					<label for="zeta_menu_check2" class="zeta-menu-text">vcxvxccx</label>
+					<ul class="zeta-menu-child">
+						<li class="zeta-menu-item">
+							<input type="radio" id="zeta_menu_check2_1" name="zeta_menu_radio2" class="zeta-menu-check">
+							<label for="zeta_menu_check2_1" class="zeta-menu-text">ghjhjhg</label>
+							<ul class="zeta-menu-child">
+								<li class="zeta-menu-item">
 									<a href="#">vcxvxcvcx</a>
 								</li>
-								<li class="zmyh-menu-item">
+								<li class="zeta-menu-item">
 									<a href="#">vcxvxcvcx</a>
 								</li>
 							</ul>
 						</li>
-						<li class="zmyh-menu-item">
+						<li class="zeta-menu-item">
 							<a href="#">vcxvxcvcx</a>
 						</li>
-						<li class="zmyh-menu-item">
+						<li class="zeta-menu-item">
 							<a href="#">vcxvxcvcx</a>
 						</li>
 					</ul>
 				</li>
-				<li class="zmyh-menu-item">
-					<input type="radio" id="zmyh_menu_check3" name="zmyh_menu_radio" class="zmyh-menu-check">
-					<label for="zmyh_menu_check3" class="zmyh-menu-text">23456789</label>
-					<ul class="zmyh-menu-child">
-						<li class="zmyh-menu-item">
+				<li class="zeta-menu-item">
+					<input type="radio" id="zeta_menu_check3" name="zeta_menu_radio" class="zeta-menu-check">
+					<label for="zeta_menu_check3" class="zeta-menu-text">23456789</label>
+					<ul class="zeta-menu-child">
+						<li class="zeta-menu-item">
 							<a href="#">dfdsfsdf</a>
 						</li>
-						<li class="zmyh-menu-item">
+						<li class="zeta-menu-item">
 							<a href="#">vcxvxcvcx</a>
 						</li>
-						<li class="zmyh-menu-item">
+						<li class="zeta-menu-item">
 							<a href="#">vcxvxcvcx</a>
 						</li>
-						<li class="zmyh-menu-item">
+						<li class="zeta-menu-item">
 							<a href="#">vcxvxcvcx</a>
 						</li>
 					</ul>
 				</li>
-				<li class="zmyh-menu-item">
-					<input type="radio" id="zmyh_menu_check4" name="zmyh_menu_radio" class="zmyh-menu-check">
-					<label for="zmyh_menu_check4" class="zmyh-menu-text">vcxvxccx</label>
-					<ul class="zmyh-menu-child">
-						<li class="zmyh-menu-item">
-							<input type="radio" id="zmyh_menu_check4_1" name="zmyh_menu_radio4" class="zmyh-menu-check">
-							<label for="zmyh_menu_check4_1" class="zmyh-menu-text">ghjhjhg</label>
-							<ul class="zmyh-menu-child">
-								<li class="zmyh-menu-item">
+				<li class="zeta-menu-item">
+					<input type="radio" id="zeta_menu_check4" name="zeta_menu_radio" class="zeta-menu-check">
+					<label for="zeta_menu_check4" class="zeta-menu-text">vcxvxccx</label>
+					<ul class="zeta-menu-child">
+						<li class="zeta-menu-item">
+							<input type="radio" id="zeta_menu_check4_1" name="zeta_menu_radio4" class="zeta-menu-check">
+							<label for="zeta_menu_check4_1" class="zeta-menu-text">ghjhjhg</label>
+							<ul class="zeta-menu-child">
+								<li class="zeta-menu-item">
 									<a href="#">vcxvxcvcx</a>
 								</li>
-								<li class="zmyh-menu-item">
+								<li class="zeta-menu-item">
 									<a href="#">vcxvxcvcx</a>
 								</li>
 							</ul>
 						</li>
-						<li class="zmyh-menu-item">
+						<li class="zeta-menu-item">
 							<a href="#">vcxvxcvcx</a>
 						</li>
-						<li class="zmyh-menu-item">
+						<li class="zeta-menu-item">
 							<a href="#">vcxvxcvcx</a>
 						</li>
 					</ul>
 				</li>
-				<li class="zmyh-menu-item">
-					<input type="radio" id="zmyh_menu_check5" name="zmyh_menu_radio" class="zmyh-menu-check">
-					<label for="zmyh_menu_check5" class="zmyh-menu-text">23456789</label>
-					<ul class="zmyh-menu-child">
-						<li class="zmyh-menu-item">
+				<li class="zeta-menu-item">
+					<input type="radio" id="zeta_menu_check5" name="zeta_menu_radio" class="zeta-menu-check">
+					<label for="zeta_menu_check5" class="zeta-menu-text">23456789</label>
+					<ul class="zeta-menu-child">
+						<li class="zeta-menu-item">
 							<a href="#">dfdsfsdf</a>
 						</li>
-						<li class="zmyh-menu-item">
+						<li class="zeta-menu-item">
 							<a href="#">vcxvxcvcx</a>
 						</li>
-						<li class="zmyh-menu-item">
+						<li class="zeta-menu-item">
 							<a href="#">vcxvxcvcx</a>
 						</li>
-						<li class="zmyh-menu-item">
-							<a href="#">vcxvxcvcx</a>
-						</li>
-					</ul>
-				</li>
-				<li class="zmyh-menu-item">
-					<input type="radio" id="zmyh_menu_check6" name="zmyh_menu_radio" class="zmyh-menu-check">
-					<label for="zmyh_menu_check6" class="zmyh-menu-text">vcxvxccx</label>
-					<ul class="zmyh-menu-child">
-						<li class="zmyh-menu-item">
-							<input type="radio" id="zmyh_menu_check6_1" name="zmyh_menu_radio6" class="zmyh-menu-check">
-							<label for="zmyh_menu_check6_1" class="zmyh-menu-text">ghjhjhg</label>
-							<ul class="zmyh-menu-child">
-								<li class="zmyh-menu-item">
-									<a href="#">vcxvxcvcx</a>
-								</li>
-								<li class="zmyh-menu-item">
-									<a href="#">vcxvxcvcx</a>
-								</li>
-							</ul>
-						</li>
-						<li class="zmyh-menu-item">
-							<a href="#">vcxvxcvcx</a>
-						</li>
-						<li class="zmyh-menu-item">
+						<li class="zeta-menu-item">
 							<a href="#">vcxvxcvcx</a>
 						</li>
 					</ul>
 				</li>
-				<li class="zmyh-menu-item">
-					<input type="radio" id="zmyh_menu_check7" name="zmyh_menu_radio" class="zmyh-menu-check">
-					<label for="zmyh_menu_check7" class="zmyh-menu-text">vcxvxccx</label>
-					<ul class="zmyh-menu-child">
-						<li class="zmyh-menu-item">
-							<input type="radio" id="zmyh_menu_check7_1" name="zmyh_menu_radio6" class="zmyh-menu-check">
-							<label for="zmyh_menu_check7_1" class="zmyh-menu-text">ghjhjhg</label>
-							<ul class="zmyh-menu-child">
-								<li class="zmyh-menu-item">
+				<li class="zeta-menu-item">
+					<input type="radio" id="zeta_menu_check6" name="zeta_menu_radio" class="zeta-menu-check">
+					<label for="zeta_menu_check6" class="zeta-menu-text">vcxvxccx</label>
+					<ul class="zeta-menu-child">
+						<li class="zeta-menu-item">
+							<input type="radio" id="zeta_menu_check6_1" name="zeta_menu_radio6" class="zeta-menu-check">
+							<label for="zeta_menu_check6_1" class="zeta-menu-text">ghjhjhg</label>
+							<ul class="zeta-menu-child">
+								<li class="zeta-menu-item">
 									<a href="#">vcxvxcvcx</a>
 								</li>
-								<li class="zmyh-menu-item">
+								<li class="zeta-menu-item">
 									<a href="#">vcxvxcvcx</a>
 								</li>
 							</ul>
 						</li>
-						<li class="zmyh-menu-item">
+						<li class="zeta-menu-item">
 							<a href="#">vcxvxcvcx</a>
 						</li>
-						<li class="zmyh-menu-item">
+						<li class="zeta-menu-item">
+							<a href="#">vcxvxcvcx</a>
+						</li>
+					</ul>
+				</li>
+				<li class="zeta-menu-item">
+					<input type="radio" id="zeta_menu_check7" name="zeta_menu_radio" class="zeta-menu-check">
+					<label for="zeta_menu_check7" class="zeta-menu-text">vcxvxccx</label>
+					<ul class="zeta-menu-child">
+						<li class="zeta-menu-item">
+							<input type="radio" id="zeta_menu_check7_1" name="zeta_menu_radio6" class="zeta-menu-check">
+							<label for="zeta_menu_check7_1" class="zeta-menu-text">ghjhjhg</label>
+							<ul class="zeta-menu-child">
+								<li class="zeta-menu-item">
+									<a href="#">vcxvxcvcx</a>
+								</li>
+								<li class="zeta-menu-item">
+									<a href="#">vcxvxcvcx</a>
+								</li>
+							</ul>
+						</li>
+						<li class="zeta-menu-item">
+							<a href="#">vcxvxcvcx</a>
+						</li>
+						<li class="zeta-menu-item">
 							<a href="#">vcxvxcvcx</a>
 						</li>
 					</ul>
 				</li>
 			</ul>
 		</div>
-		<div class="zmyh-menu-mask"></div>
+		<div class="zeta-menu-mask"></div>
 	</nav>
 </div>
 </body>
